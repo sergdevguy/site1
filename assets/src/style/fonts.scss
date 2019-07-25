@@ -1,10 +1,65 @@
 @font-face {
-    font-family: 'Font';
-    src: url('Font-Regular.eot');
-    src: local('Font Regular'), local('Font-Regular'),
-        url('Font-Regular.eot?#iefix') format('embedded-opentype'),
-        url('Font-Regular.woff') format('woff'),
-        url('Font-Regular.ttf') format('truetype');
+    font-family: 'Oswald-SemiBold';
+    src: url('../fonts/Oswald-SemiBold.eot');
+    src: local('Oswald SemiBold'), local('Oswald-SemiBold'),
+        url('../fonts/Oswald-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oswald-SemiBold.woff') format('woff'),
+        url('../fonts/Oswald-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald-ExtraLight';
+    src: url('../fonts/Oswald-ExtraLight.eot');
+    src: local('Oswald ExtraLight'), local('Oswald-ExtraLight'),
+        url('../fonts/Oswald-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oswald-ExtraLight.woff') format('woff'),
+        url('../fonts/Oswald-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald-Light';
+    src: url('../fonts/Oswald-Light.eot');
+    src: local('Oswald Light'), local('Oswald-Light'),
+        url('../fonts/Oswald-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oswald-Light.woff') format('woff'),
+        url('../fonts/Oswald-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald-Bold';
+    src: url('../fonts/Oswald-Bold.eot');
+    src: local('Oswald Bold'), local('Oswald-Bold'),
+        url('../fonts/Oswald-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oswald-Bold.woff') format('woff'),
+        url('../fonts/Oswald-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald-Regular';
+    src: url('../fonts/Oswald-Regular.eot');
+    src: local('Oswald Regular'), local('Oswald-Regular'),
+        url('../fonts/Oswald-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oswald-Regular.woff') format('woff'),
+        url('../fonts/Oswald-Regular.ttf') format('truetype');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald-Medium';
+    src: url('../fonts/Oswald-Medium.eot');
+    src: local('Oswald Medium'), local('Oswald-Medium'),
+        url('../fonts/Oswald-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oswald-Medium.woff') format('woff'),
+        url('../fonts/Oswald-Medium.ttf') format('truetype');
+    font-weight: 500;
     font-style: normal;
 }
