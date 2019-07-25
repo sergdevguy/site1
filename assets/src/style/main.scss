@@ -1,0 +1,18 @@
+// Override default variable Bootstrap 4 values and determine their
+@import "variables";
+
+// Required files for bootstrap
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// Optional imports
+@import "../../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../../node_modules/bootstrap/scss/carousel";
+
+// Fonts
+@import "fonts";
+
+// Connect my styles
+@import "my";
