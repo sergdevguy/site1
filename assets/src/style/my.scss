@@ -11,6 +11,7 @@ $companyFontGray: '#999999';
     text-align: center;
     text-transform: uppercase;
     padding-bottom: 60px;
+    width: 100%;
 
     margin-top: 100px;
 }
@@ -121,10 +122,12 @@ body{
 
 
 
-.wrap-request{
+.wrap-request,
+.wrap-whantWorkWithUs{
     background-color: $companyСolor;
 
-    .request{
+    .request,
+    .whantWorkWithUs{
         margin-top: 150px;
         padding: 30px 0 45px 0;
     
@@ -199,6 +202,152 @@ body{
 
 
 
-.test{
-    background-color: red;
+.question{
+    margin-bottom: 150px;
+
+    .openList__header{
+        font-size: 24px;
+        line-height: 36px;
+        color: $companyСolor;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .opentList__text{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #999999;
+    }
+
+    .arrow{
+        float: left;
+    }
+    .arrow-close{
+        margin-right: 13px;
+        margin-top: 13px;
+        width: 0; 
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 12px solid $companyСolor;
+    }
+    .arrow-open{
+        margin-right: 13px;
+        margin-top: 13px;
+        width: 0; 
+        height: 0;
+        border-top: 7px solid transparent;
+        border-left: 12px solid $companyСolor;
+        border-bottom: 7px solid transparent;
+    }
+}
+
+
+
+
+.wrap-partners{
+    background-color: #404149;
+    padding: 100px 0;
+
+    .block-header{
+        color: #ffffff;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 60px;
+    }
+}
+
+
+
+
+.comments{
+    .comments__block{
+        padding: 32px 30px 38px 30px;
+        background-color: #f7f7f7;
+    
+        .text{
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+            padding-top: 19px;
+            color: #999999;
+        }
+    }
+
+    .person{
+        margin-top: 30px;
+        //margin-bottom: 150px;
+        font-size: 21px;
+        line-height: 31px;
+        letter-spacing: 0.02em;
+        font-weight: bold;
+
+        .workPlace{
+            color: $companyСolor;
+        }
+    }
+}
+
+
+
+
+.contacts{
+
+    padding-bottom: 150px;
+
+    p,
+    img{
+       text-align: center; 
+    }
+    img{
+        display: block;
+        margin: 0 auto;
+        width: 49px;
+        height: 48px;
+        margin-bottom: 20px;
+    }
+
+    .contacts__blockInfo,
+    .contacts__info
+    {
+        font-size: 24px;
+        line-height: 36px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .contacts__blockInfo{
+        color: #999999;
+    }
+    .contacts__email{
+        color: $companyСolor;
+    }
+}
+
+
+
+
+.wrap-footer{
+    background-color: #404149;
+    padding: 30px 0;
+
+    .footerLeft,
+    .footerRight{
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFFFFF;
+        margin-bottom: 0;
+
+        float: left;
+    }
+    .footerRight{
+        float: right;
+    }
 }

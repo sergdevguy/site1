@@ -102,14 +102,14 @@ function htmlBuild(){
 function cssBuild(){
 	return src(path.src.style)
 		     .pipe(plumber())
-         .pipe(sourcemaps.init())
+         //.pipe(sourcemaps.init())
          .pipe(sass())
          .pipe(autoprefixer({
             overrideBrowserslist: ['last 2 versions'],
             cascade: false
          }))
          .pipe(cleanCSS())
-         .pipe(sourcemaps.write('./'))
+         //.pipe(sourcemaps.write('./'))
          .pipe(stripCssComments({preserve: false}))
          .pipe(dest(path.build.css))
          .pipe(webserver.reload({stream: true}));
@@ -119,9 +119,9 @@ function jsBuild(){
 	return src(path.src.js)
 		     .pipe(plumber())
          .pipe(rigger())
-         .pipe(sourcemaps.init())
+         //.pipe(sourcemaps.init())
          .pipe(uglify())
-         .pipe(sourcemaps.write('./'))
+         //.pipe(sourcemaps.write('./'))
          .pipe(dest(path.build.js))
          .pipe(webserver.reload({stream: true}));
 };
