@@ -24,6 +24,8 @@ img{
 
 body{
     font-family: $companyFontRegular;
+    position: relative;
+    width: 100%;
 
     h1{
         font-size: 64px;
@@ -38,15 +40,74 @@ body{
 
 
 
+.nav-container{
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 15px;
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 20px;
+    left:0; 
+    right:0;
+
+    .nav-button{
+        width: 50px;
+        height: 50px;
+        background-color: $companyСolor;
+        float: right;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+
+        .nav-button__line{
+            width: 21px;
+            height: 5px;
+            background-color: #fff;
+            margin: 0 auto;
+            margin-top: 3px;
+
+            &:first-child{
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+
+
 .main-container{
     text-align: center;
     background-image: url("../img/main-container-bg.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: cover cover;
     color: #fff;
 
     h2{
         padding-bottom: 320px;
+    }
+    
+    @include media-breakpoint-up(xs) {
+        h1 {
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+    @include media-breakpoint-up(sm) {
+        h1 {
+            font-size: 55px;
+            line-height: 70px;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        h1 {
+            font-size: 64px;
+            line-height: 95px;
+        }
     }
 }
 
@@ -56,37 +117,38 @@ body{
 .our-achievement{
     background-color: #f7f7f7;
     margin-top: -150px;
-}
+    padding: 37px 0 57px 0;
 
-.achievement-block{
-    display: inline-block;
-    width: 190px;
-    margin-right: 30px;
-    text-align: center;
-    padding: 57px 0;
-
-    &:last-child{
-        margin-right: 0;
-    }
-
-    &>.number{
-        font-size: 72px;
-        line-height: 107px;
-        color: $companyСolor;
-    }
-
-    &>.time{
-        font-size: 36px;
-        line-height: 53px;
-        text-transform: uppercase;
-        font-weight: 800;
-    }
-
-    &>.other{
-        font-size: 18px;
-        line-height: 27px;
-
-        color: $companyFontGray;
+    .achievement-block{
+        display: inline-block;
+        width: 190px;
+        margin-right: 30px;
+        text-align: center;
+    
+        &:last-child{
+            margin-right: 0;
+        }
+    
+        &>.number{
+            font-size: 72px;
+            line-height: 107px;
+            color: $companyСolor;
+            padding-top: 20px;
+        }
+    
+        &>.time{
+            font-size: 36px;
+            line-height: 53px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+    
+        &>.other{
+            font-size: 18px;
+            line-height: 27px;
+    
+            color: $companyFontGray;
+        }
     }
 }
 
@@ -94,7 +156,6 @@ body{
 
 
 .our-projects{
-    //margin-top: 100px;
 
     .our-project__header{
         font-size: 24px;
@@ -117,6 +178,7 @@ body{
         margin-top: 45px;
         margin-bottom: 15px;
     }
+
 }
 
 
@@ -129,7 +191,8 @@ body{
     .request,
     .whantWorkWithUs{
         margin-top: 150px;
-        padding: 30px 0 45px 0;
+        padding-top: 30px;
+        padding-bottom: 45px;
     
         h3{
             font-weight: bold;
@@ -171,10 +234,6 @@ body{
 
 
 .what-we-do__block{
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
 
     h4{
         font-size: 21px;
@@ -189,6 +248,11 @@ body{
     .what-we-do__container{
         padding: 59px 89px;
         background-color: #f7f7f7;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
     }
 }
 
@@ -257,6 +321,14 @@ body{
         margin-top: 0;
         margin-bottom: 0;
         padding-bottom: 60px;
+    }
+
+    .partners img{
+        padding-right: 20px;
+
+        &:last-child{
+            padding-right: 0;
+        }
     }
 }
 
@@ -344,10 +416,5 @@ body{
         line-height: 22px;
         color: #FFFFFF;
         margin-bottom: 0;
-
-        float: left;
-    }
-    .footerRight{
-        float: right;
     }
 }
