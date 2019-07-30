@@ -22,7 +22,12 @@ a:hover{
     text-decoration: none;
     border-bottom: 1px solid $companyСolor;
 }
-
+.slideAnimated{
+    opacity: 0;
+}
+.showSlide{
+    opacity: 1;
+}
 
 
 
