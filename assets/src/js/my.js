@@ -39,7 +39,6 @@ $( document ).ready(function(){
         achivmentArr.push(Number.parseInt($(this).text()));
         $(this).text("0");
     });
-    console.log(achivmentArr);
 
 
     /* Считаем цифры от 0 до указанного числа в элементе */
@@ -54,7 +53,6 @@ $( document ).ready(function(){
                 } else if(numberFromArr == tick){
                     clearInterval(timerId);
                     ticktick_ready += 1;
-                    console.log("tick!");
                 }
             }, 10);
         }
@@ -63,7 +61,14 @@ $( document ).ready(function(){
 
     /* Определяем область видимости. */
     var windowHeight = $(window).height();
-    var ticktick_ready = 0;
+
+    $('.number').each(function(index) {
+      var self = $(this);
+      height = self.offset().top + self.height();
+      if ($(document, window).scrollTop() + windowHeight >= height ) {
+          ticktick(self, achivmentArr[index]);
+      }
+    });
 
     $(window).on('scroll', function() {
         $('.number').each(function(index) {
@@ -73,19 +78,18 @@ $( document ).ready(function(){
                 ticktick(self, achivmentArr[index]);
             }
         });
-        if(ticktick_ready >= 4){
-            //$(document).unbind('scroll');
-        }
     });
 
 
 
 
     /* Добавляем анимацию, когда элемент в области видимости экрана
+    большие блоки и меню nav
     _________________________________________________________
     _________________________________________________________
     _________________________________________________________
     */
+
     jQuery.fn.extend({
         onAppearanceAddClass: function(class_to_add) {
           var $window = $( window ),
@@ -148,4 +152,85 @@ $( document ).ready(function(){
         $(".contact-form").css("display", "none");
         $(".contact-form__wrapper").removeClass("animated jackInTheBox");
       });
+
+
+
+
+      /* Кнопка навигации по сайту
+      _________________________________________________________
+      _________________________________________________________
+      _________________________________________________________
+      */
+
+      // Открываем и закрываем меню по нажатию на кнопку меню
+      $(".nav-button").click(function(){
+        if($(".toggle-menu").css('display') == 'none'){
+          $(".toggle-menu").css("display", "flex");
+
+          // постепенно появляем каждый элемент навигации
+          var num_links = $('.toggle-menu__item').length;
+          var num__ = 1;
+    
+          function sec() {
+            var elem = ".toggle-menu > :nth-child(" + num__ + ") > a";
+            $(elem).onAppearanceAddClass('animated slideInLeft');
+            $(elem).css("opacity", "1");
+            if(num__ <= num_links){
+              num__ += 1;
+            } else{
+              clearInterval(sec);
+            }
+          }
+          setInterval(sec, 30);
+
+        } else{
+          $(".toggle-menu").css("display", "none");
+          $('.toggle-menu__item').each(function(index){
+            $(this).removeClass('animated slideInLeft');
+            $(this).css("opacity", "0")
+          });
+        }
+      });
+
+      $(".toggle-menu__item").click(function(){
+        $(".toggle-menu").css("display", "none");
+        // удаляем всю инамацию с элементов, что бы она заново проигралась
+        // при повторе
+        $('.toggle-menu__item').each(function(index){
+          $(this).removeClass('animated slideInLeft');
+          $(this).css("opacity", "0")
+        });
+      });
+
+      var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 400
+      });
+
+
+
+
+      /* Проверяем появился ли элемент в области видимости
+      и показываем/убираем кнопку "наверх"
+      _________________________________________________________
+      _________________________________________________________
+      _________________________________________________________
+      */
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          document.getElementById("scroller").style.display = "block";
+        } else {
+          document.getElementById("scroller").style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+
 });

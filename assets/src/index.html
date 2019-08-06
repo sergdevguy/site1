@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/main.css">
     </head> 
 
-    <body>
+    <body id="toTop">
 
 
 
@@ -25,6 +25,16 @@
                 <div class="nav-button__line"></div>
                 <div class="nav-button__line"></div>
             </div>
+            <ul class="toggle-menu">
+                <li><a data-scroll href="#ourProjects" class="toggle-menu__item">Наши проекты</a></li>
+                <li><a data-scroll href="#whatWeDo" class="toggle-menu__item">Чем мы занимаемся</a></li>
+                <li><a data-scroll href="#portfolio" class="toggle-menu__item">Портфолио</a></li>
+                <li><a data-scroll href="#answers" class="toggle-menu__item">Ответы на вопросы</a></li>
+                <li><a data-scroll href="#partners" class="toggle-menu__item">Партнеры</a></li>
+                <li><a data-scroll href="#otzivi" class="toggle-menu__item">Отзывы</a></li>
+                <li><a data-scroll href="#makeZakaz" class="toggle-menu__item">Сделать заказ</a></li>
+                <li><a data-scroll href="#contacts" class="toggle-menu__item">Контакты</a></li>
+            </ul>
         </nav>
 
 
@@ -65,7 +75,7 @@
                         <div class="info">по регионам</div>
                     </div>
                 </div>
-                <div class="col-auto">
+                <div class="col-auto" id="test">
                     <div class="achievement-block">
                         <div class="number">68</div>
                         <div class="time">сотрудников</div>
@@ -78,7 +88,7 @@
 
 
 
-        <div class="container our-projects">
+        <div class="container our-projects" id="ourProjects">
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="block-header">Наши самые сложные проекты</h2>
@@ -127,7 +137,7 @@
 
 
 
-        <div class="container what-we-do">
+        <div class="container what-we-do" id="whatWeDo">
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="block-header">Чем мы занимаемся?</h2>
@@ -176,7 +186,7 @@
 
 
 
-        <div class="container-fluid portfolio">
+        <div class="container-fluid portfolio" id="portfolio">
             <div class="row">
                 <div class="col-md-3 col-sm-4 p-0 slideAnimated">
                     <img src="img/portfolio1.jpg" alt="">
@@ -208,7 +218,7 @@
 
 
 
-        <div class="container question">
+        <div class="container question" id="answers">
             <div class="row test">
                 <h2 class="block-header">Ответы на вопросы</h2>
                 <div class="col-md-8 openList">
@@ -245,7 +255,7 @@
     
 
 
-        <div class="wrap-partners">
+        <div class="wrap-partners" id="partners">
             <div class="container partners">
                 <div class="row d-flex justify-content-between">
                     <h2 class="block-header">Наши партнеры</h2>
@@ -271,7 +281,7 @@
 
 
 
-        <div class="container comments">
+        <div class="container comments" id="otzivi">
             <div class="row">
                 <h2 class="block-header">Отзывы о работе с нами</h2>
                 <div class="col-md-4">
@@ -301,7 +311,7 @@
 
 
 
-        <div class="wrap-whantWorkWithUs">
+        <div class="wrap-whantWorkWithUs" id="makeZakaz">
             <div class="container whantWorkWithUs">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-9">
@@ -321,7 +331,7 @@
 
 
 
-        <div class="container contacts">
+        <div class="container contacts" id="contacts">
             <div class="row">
                 <h2 class="block-header">Контакты</h2>
                 <div class="col-lg-3 col-md-6 px-5 px-lg-0 slideAnimated">
@@ -379,6 +389,13 @@
                     <p><input type="submit" value="Отправить" class="submit-button"></p>
                 </form>
             </div>
+        </div>
+
+
+
+
+        <div class="top-button" id="scroller">
+            <a data-scroll href="#toTop"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
         </div>
 
 

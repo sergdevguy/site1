@@ -31,6 +31,7 @@ a:hover{
 
 
 
+
 body{
     font-family: $companyFontRegular;
     position: relative;
@@ -76,6 +77,11 @@ body{
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        z-index: 30;
+
+        &:hover{
+            transform: rotate(90deg);
+        }
 
         .nav-button__line{
             width: 21px;
@@ -89,6 +95,42 @@ body{
             }
         }
     }
+
+    .toggle-menu{
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, .9);
+        z-index: 5;
+        display: none;
+        padding: 0;
+    
+        li{
+            margin: 1px;
+            a{
+                display: block;
+                width: 300px;
+                color: $companyСolor;
+                background-color: #ffffff;
+                padding: 20px 40px;
+                opacity: 0;
+
+                &:hover{
+                    opacity: 1;
+                    background-color: $companyСolor;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
 }
 
 
@@ -432,6 +474,15 @@ body{
     .contactsTelephone{
         margin-bottom: 0;
     }
+
+    .contacts-icon{
+        width: 100%;
+        height: 49px;
+        margin-bottom: 20px;
+        font-size: 56px;
+        text-align: center;
+        color: $companyСolor;
+    }
 }
 
 
@@ -507,8 +558,27 @@ body{
             margin-top: 30px;
         }
     }
+}
 
 
 
 
+.top-button{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30px;
+    opacity: .5;
+    cursor: pointer;
+    display: none;
+
+    &:hover{
+        opacity: 1;
+    }
+
+    a{
+        i{
+            color: $companyСolor;
+        }
+    }
 }
