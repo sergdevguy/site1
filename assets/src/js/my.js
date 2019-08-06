@@ -127,4 +127,25 @@ $( document ).ready(function(){
       })
       
       $('.slideAnimated').onAppearanceAddClass('animated slideInLeft showSlide');
+
+
+
+
+      /* Открытие формы при нажатии на кнопки "ваш запрос"
+      _________________________________________________________
+      _________________________________________________________
+      _________________________________________________________
+      */
+
+      // При нажатии на кнопку запроса показать форму
+      $(".button-request").click(function(){
+        $(".contact-form").css("display", "flex");
+        $(".contact-form__wrapper").addClass("animated jackInTheBox");
+      });
+
+      // Закрыть форму при нажатии на крестик
+      $(".contact-form__close-button").click(function(){
+        $(".contact-form").css("display", "none");
+        $(".contact-form__wrapper").removeClass("animated jackInTheBox");
+      });
 });
