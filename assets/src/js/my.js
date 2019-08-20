@@ -145,12 +145,22 @@ $( document ).ready(function(){
       $(".button-request").click(function(){
         $(".contact-form").css("display", "flex");
         $(".contact-form__wrapper").addClass("animated jackInTheBox");
+        // Плавно включем белый фон
+        $(".contact-form").animate({
+          opacity: 1,
+        }, 300, function() {});
       });
 
       // Закрыть форму при нажатии на крестик
       $(".contact-form__close-button").click(function(){
-        $(".contact-form").css("display", "none");
-        $(".contact-form__wrapper").removeClass("animated jackInTheBox");
+        $(".contact-form").animate({
+          opacity: 0,
+        }, 300, function() {
+          $(".contact-form").css("display", "none");
+          $(".contact-form__wrapper").removeClass("animated jackInTheBox");
+        });
+        // Снова делаем форму прозрачной, что бы она заного потом плавно появлялась
+        //$(".contact-form").css("opacity", "0");
       });
 
 
@@ -183,22 +193,34 @@ $( document ).ready(function(){
           }
           setInterval(sec, 30);
 
+          $(".toggle-menu").animate({
+            opacity: 1,
+          }, 300, function() {});
+
         } else{
-          $(".toggle-menu").css("display", "none");
-          $('.toggle-menu__item').each(function(index){
-            $(this).removeClass('animated slideInLeft');
-            $(this).css("opacity", "0")
+          $(".toggle-menu").animate({
+            opacity: 0,
+          }, 300, function() {
+            $(".toggle-menu").css("display", "none");
+            $('.toggle-menu__item').each(function(index){
+              $(this).removeClass('animated slideInLeft');
+              $(this).css("opacity", "0")
+            });
           });
         }
       });
 
       $(".toggle-menu__item").click(function(){
-        $(".toggle-menu").css("display", "none");
-        // удаляем всю инамацию с элементов, что бы она заново проигралась
-        // при повторе
-        $('.toggle-menu__item').each(function(index){
-          $(this).removeClass('animated slideInLeft');
-          $(this).css("opacity", "0")
+        $(".toggle-menu").animate({
+          opacity: 0,
+        }, 300, function() {
+          $(".toggle-menu").css("display", "none");
+          // удаляем всю инамацию с элементов, что бы она заново проигралась
+          // при повторе
+          $('.toggle-menu__item').each(function(index){
+            $(this).removeClass('animated slideInLeft');
+            $(this).css("opacity", "0")
+          });
         });
       });
 

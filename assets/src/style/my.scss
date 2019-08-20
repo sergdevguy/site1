@@ -78,6 +78,7 @@ body{
         justify-content: center;
         cursor: pointer;
         z-index: 30;
+        transition: transform .5s linear;
 
         &:hover{
             transform: rotate(90deg);
@@ -111,6 +112,7 @@ body{
         z-index: 5;
         display: none;
         padding: 0;
+        opacity: 0;
     
         li{
             margin: 1px;
@@ -518,6 +520,7 @@ body{
     align-items: center;
     justify-content: center;
     z-index: 100;
+    opacity: 0;
     
     .contact-form__wrapper{
         background-color: $companyСolor;
